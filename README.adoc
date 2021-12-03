@@ -1,0 +1,26 @@
+= Docs system template
+
+Tools and config files to quickly build a docs/notes system with https://asciidoctor.org[asciidoctor] and automatically publish on https://pages.github.com/[GitHub pages] using https://github.com/features/actions[GitHub actions].
+
+On the development side, it features
+
+* Live reloading
+* Docker environment to get it going in 5 minutes.
+
+== Run with Docker
+
+[source,shell]
+----
+docker compose up
+----
+
+then open the generated `build/index.html` in the browser.
+
+== Run without Docker
+
+. Run `make setup` to set up dependencies.
+. Run `make`.
+. Open the generated `build/index.html` in the browser.
+
+
+

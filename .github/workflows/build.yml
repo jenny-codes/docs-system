@@ -1,0 +1,37 @@
+name: Build Documents
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+      - name: Install buildtime dependencies
+        run: |
+          gem install asciidoctor asciidoctor-diagram
+          sudo apt-get update
+          sudo apt-get install plantuml
+      - name: Checkout build branch
+        uses: actions/checkout@v2
+        with:
+          ref: build
+          path: build
+      - name: Build
+        run: |
+          make clean
+          make -j $(nproc) build
+          rm -rf build/.asciidoctor
+      - name: Deploy
+        run: |
+          cd build
+          git config --global user.email "jinghua.shih@gmail.com"
+          git config --global user.name "Jenny Shih"
+          git add -A
+          git commit -m "youre good"
+          git push

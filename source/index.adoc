@@ -1,0 +1,17 @@
+= My very organized doc
+
+Built with https://asciidoctor.org[asciidoctor], published on https://pages.github.com/[GitHub pages], automated with https://github.com/features/actions[GitHub actions].
+
+== My arbitrary section title
+:section_dir: section1
+
+include::{section_dir}/topic1.adoc[leveloffset=+2]
+
+include::{section_dir}/topic3.adoc[leveloffset=+2]
+
+
+== My another arbitrary section title
+:another_section_dir: section2
+
+include::{another_section_dir}/topic2.adoc[leveloffset=+2]
+
