@@ -7,6 +7,8 @@ On the development side, it features
 * Live reloading
 * Docker environment to get it going in 5 minutes.
 
+To me, the greatest pleasure (and where most of the time is spent) in this project is setting up live reloading mechanism and the Docker environment. It's a lot of fun piecing things together.
+
 == Run with Docker
 
 [source,shell]
@@ -18,9 +20,11 @@ then open the generated `build/index.html` in the browser.
 
 == Run without Docker
 
+[WARNING]
+====
+It only works for MacOS with Homebrew and Ruby installed :P
+====
+
 . Run `make setup` to set up dependencies.
 . Run `make`.
 . Open the generated `build/index.html` in the browser.
-
-
-
