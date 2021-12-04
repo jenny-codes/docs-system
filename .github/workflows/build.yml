@@ -25,13 +25,13 @@ jobs:
       - name: Build
         run: |
           make clean
-          make -j $(nproc) build
+          make -j $(nproc) build/index.html
           rm -rf build/.asciidoctor
       - name: Deploy
         run: |
           cd build
-          git config --global user.email "jinghua.shih@gmail.com"
-          git config --global user.name "Jenny Shih"
+          git config --global user.email "your@email"
+          git config --global user.name "Your Name"
           git add -A
-          git commit -m "youre good"
+          git commit -m "Update Github pages"
           git push
